@@ -5,7 +5,7 @@ A 2D arena brawler that blends **Blood+-style sword combat** with **magical-girl
 Fight waves of enemies in a single arena: move, dash, jump, and cut your way
 through with light and heavy attacks. Clear five waves to win.
 
-> **Version:** 0.2.0 · **Status:** playable prototype · **License:** zlib
+> **Version:** 0.3.0 · **Status:** playable prototype · **License:** zlib
 
 ---
 
@@ -108,6 +108,8 @@ MagiaSmash-<version>-linux-x86_64/
 
 Prebuilt Linux x86_64 builds are attached to
 [GitHub Releases](https://github.com/AnonymousOSTeam/MagiaSmash/releases).
+
+**Project website:** https://anonymousosteam.github.io/MagiaSmash/
 
 ## License
 
