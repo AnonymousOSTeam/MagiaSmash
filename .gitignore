@@ -1,0 +1,21 @@
+# Build output
+bin/
+build/**/obj/
+build/**/bin/
+obj/
+*.o
+*.d
+
+# Distribution output
+dist/
+
+# Runtime logs
+*.log
+orx.log
+MagiaSmash*.log
+
+# Editor / OS
+.vscode/
+.sublime-*/
+*~
+.DS_Store

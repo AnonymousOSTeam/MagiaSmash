@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeLite_Project Name="MagiaSmash">
+  <VirtualDirectory Name="MagiaSmash">
+    <VirtualDirectory Name="build">
+      <File Name="../../premake4.lua"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="bundle">
+      <File Name="../../../include/orxBundleData.inc"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="config">
+      <File Name="../../../data/config/CreationTemplate.ini"/>
+      <File Name="../../../data/config/ExtensionTemplate.ini"/>
+      <File Name="../../../data/config/MagiaSmash.ini"/>
+      <File Name="../../../data/config/MagiaSmashd.ini"/>
+      <File Name="../../../data/config/MagiaSmashp.ini"/>
+      <File Name="../../../data/config/SettingsTemplate.ini"/>
+    </VirtualDirectory>
+    <VirtualDirectory Name="include">
+      <File Name="../../../include/Fighter.h"/>
+      <File Name="../../../include/GameHUD.h"/>
+      <File Name="../../../include/MagiaSmash.h"/>
+      <VirtualDirectory Name="extensions">
+        <VirtualDirectory Name="AtariAudio">
+          <File Name="../../../include/extensions/AtariAudio/AtariAudio.h"/>
+          <File Name="../../../include/extensions/AtariAudio/AtariMachine.h"/>
+          <File Name="../../../include/extensions/AtariAudio/Mk68901.h"/>
+          <File Name="../../../include/extensions/AtariAudio/SndhFile.h"/>
+          <File Name="../../../include/extensions/AtariAudio/SteDac.h"/>
+          <VirtualDirectory Name="external">
+            <VirtualDirectory Name="Musashi">
+              <File Name="../../../include/extensions/AtariAudio/external/Musashi/m68k.h"/>
+              <File Name="../../../include/extensions/AtariAudio/external/Musashi/m68kconf.h"/>
+              <File Name="../../../include/extensions/AtariAudio/external/Musashi/m68kcpu.h"/>
+              <File Name="../../../include/extensions/AtariAudio/external/Musashi/m68kops.h"/>
+            </VirtualDirectory>
+            <File Name="../../../include/extensions/AtariAudio/external/ice_24.h"/>
+          </VirtualDirectory>
+          <File Name="../../../include/extensions/AtariAudio/ym2149_tables.h"/>
+          <File Name="../../../include/extensions/AtariAudio/ym2149c.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="FastNoiseLite">
+          <VirtualDirectory Name="C">
+            <File Name="../../../include/extensions/FastNoiseLite/C/FastNoiseLite.h"/>
+          </VirtualDirectory>
+        </VirtualDirectory>
+        <VirtualDirectory Name="Scroll">
+          <File Name="../../../include/extensions/Scroll/Scroll.h"/>
+          <File Name="../../../include/extensions/Scroll/ScrollBase.h"/>
+          <File Name="../../../include/extensions/Scroll/ScrollObject.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="cRSID">
+          <VirtualDirectory Name="C64">
+            <File Name="../../../include/extensions/cRSID/C64/C64.h"/>
+            <File Name="../../../include/extensions/cRSID/C64/SID_CombiWaves.h"/>
+            <File Name="../../../include/extensions/cRSID/C64/SID_FilterCurves.h"/>
+            <File Name="../../../include/extensions/cRSID/C64/SincWindow.h"/>
+          </VirtualDirectory>
+          <File Name="../../../include/extensions/cRSID/Config.h"/>
+          <File Name="../../../include/extensions/cRSID/Optimize.h"/>
+          <VirtualDirectory Name="host">
+            <File Name="../../../include/extensions/cRSID/host/host.h"/>
+          </VirtualDirectory>
+          <File Name="../../../include/extensions/cRSID/libcRSID.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="ibxm">
+          <File Name="../../../include/extensions/ibxm/ibxm.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="lz4">
+          <File Name="../../../include/extensions/lz4/lz4.h"/>
+          <File Name="../../../include/extensions/lz4/lz4hc.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="nuklear">
+          <File Name="../../../include/extensions/nuklear/nuklear.h"/>
+        </VirtualDirectory>
+        <File Name="../../../include/extensions/orxBundle.h"/>
+        <File Name="../../../include/extensions/orxExtensions.h"/>
+        <File Name="../../../include/extensions/orxMod.h"/>
+        <File Name="../../../include/extensions/orxMovie.h"/>
+        <File Name="../../../include/extensions/orxNoiseTexture.h"/>
+        <File Name="../../../include/extensions/orxNuklear.h"/>
+        <File Name="../../../include/extensions/orxPy.h"/>
+        <File Name="../../../include/extensions/orxRemote.h"/>
+        <File Name="../../../include/extensions/orxSid.h"/>
+        <File Name="../../../include/extensions/orxSndh.h"/>
+        <VirtualDirectory Name="pl_mpeg">
+          <File Name="../../../include/extensions/pl_mpeg/pl_mpeg.h"/>
+        </VirtualDirectory>
+        <VirtualDirectory Name="pocketpy">
+          <File Name="../../../include/extensions/pocketpy/pocketpy.h"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
+    <VirtualDirectory Name="src">
+      <File Name="../../../src/Fighter.cpp"/>
+      <File Name="../../../src/GameHUD.cpp"/>
+      <File Name="../../../src/MagiaSmash.cpp"/>
+      <VirtualDirectory Name="extensions">
+        <VirtualDirectory Name="pocketpy">
+          <File Name="../../../src/extensions/pocketpy/pocketpy.c"/>
+        </VirtualDirectory>
+      </VirtualDirectory>
+    </VirtualDirectory>
+  </VirtualDirectory>
+  <Settings Type="Executable">
+    <Configuration Name="Debug_x64" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/MagiaSmashd" IntermediateDirectory="$(ConfigurationName)" Command="./MagiaSmashd" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-m64;-std=c++11;-fno-exceptions;-Wno-write-strings;-Wno-multichar;-Wno-unused-function" C_Options="-ffast-math;-g;-m64;-std=c11;-Wno-write-strings;-Wno-multichar;-Wno-unused-function">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include/extensions/pocketpy"/>
+        <IncludePath Value="../../../include/extensions"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="PK_ENABLE_OS=0"/>
+        <Preprocessor Value="__orxDEBUG__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m64;-L/usr/lib64;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orxd" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Profile_x64" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/MagiaSmashp" IntermediateDirectory="$(ConfigurationName)" Command="./MagiaSmashp" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-O2;-m64;-std=c++11;-fno-exceptions;-fno-rtti;-Wno-write-strings;-Wno-multichar;-Wno-unused-function;-fschedule-insns" C_Options="-ffast-math;-g;-O2;-m64;-std=c11;-Wno-write-strings;-Wno-multichar;-Wno-unused-function;-fschedule-insns">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include/extensions/pocketpy"/>
+        <IncludePath Value="../../../include/extensions"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="PK_ENABLE_OS=0"/>
+        <Preprocessor Value="NDEBUG"/>
+        <Preprocessor Value="__orxPROFILER__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m64;-L/usr/lib64;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orxp" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Release_x64" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/MagiaSmash" IntermediateDirectory="$(ConfigurationName)" Command="./MagiaSmash" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-O2;-m64;-std=c++11;-fno-exceptions;-fno-rtti;-Wno-write-strings;-Wno-multichar;-Wno-unused-function;-fschedule-insns" C_Options="-ffast-math;-g;-O2;-m64;-std=c11;-Wno-write-strings;-Wno-multichar;-Wno-unused-function;-fschedule-insns">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include/extensions/pocketpy"/>
+        <IncludePath Value="../../../include/extensions"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="PK_ENABLE_OS=0"/>
+        <Preprocessor Value="NDEBUG"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m64;-L/usr/lib64;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orx" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Bundle_x64" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/MagiaSmash" IntermediateDirectory="$(ConfigurationName)" Command="./MagiaSmash" CommandArguments="-b MagiaSmash.obr" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-O2;-m64;-std=c++11;-fno-exceptions;-fno-rtti;-Wno-write-strings;-Wno-multichar;-Wno-unused-function;-fschedule-insns" C_Options="-ffast-math;-g;-O2;-m64;-std=c11;-Wno-write-strings;-Wno-multichar;-Wno-unused-function;-fschedule-insns">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include/extensions/pocketpy"/>
+        <IncludePath Value="../../../include/extensions"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="PK_ENABLE_OS=0"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m64;-L/usr/lib64;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orx" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Debug_x32" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/MagiaSmashd" IntermediateDirectory="$(ConfigurationName)" Command="./MagiaSmashd" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-msse2;-m32;-std=c++11;-fno-exceptions;-Wno-write-strings;-Wno-multichar;-Wno-unused-function" C_Options="-ffast-math;-g;-msse2;-m32;-std=c11;-Wno-write-strings;-Wno-multichar;-Wno-unused-function">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include/extensions/pocketpy"/>
+        <IncludePath Value="../../../include/extensions"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="PK_ENABLE_OS=0"/>
+        <Preprocessor Value="__orxDEBUG__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m32;-L/usr/lib32;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orxd" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Profile_x32" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/MagiaSmashp" IntermediateDirectory="$(ConfigurationName)" Command="./MagiaSmashp" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-msse2;-O2;-m32;-std=c++11;-fno-exceptions;-fno-rtti;-Wno-write-strings;-Wno-multichar;-Wno-unused-function;-fschedule-insns" C_Options="-ffast-math;-g;-msse2;-O2;-m32;-std=c11;-Wno-write-strings;-Wno-multichar;-Wno-unused-function;-fschedule-insns">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include/extensions/pocketpy"/>
+        <IncludePath Value="../../../include/extensions"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="PK_ENABLE_OS=0"/>
+        <Preprocessor Value="NDEBUG"/>
+        <Preprocessor Value="__orxPROFILER__"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m32;-L/usr/lib32;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orxp" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Release_x32" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/MagiaSmash" IntermediateDirectory="$(ConfigurationName)" Command="./MagiaSmash" CommandArguments="" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-msse2;-O2;-m32;-std=c++11;-fno-exceptions;-fno-rtti;-Wno-write-strings;-Wno-multichar;-Wno-unused-function;-fschedule-insns" C_Options="-ffast-math;-g;-msse2;-O2;-m32;-std=c11;-Wno-write-strings;-Wno-multichar;-Wno-unused-function;-fschedule-insns">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include/extensions/pocketpy"/>
+        <IncludePath Value="../../../include/extensions"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="PK_ENABLE_OS=0"/>
+        <Preprocessor Value="NDEBUG"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m32;-L/usr/lib32;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orx" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+    <Configuration Name="Bundle_x32" CompilerType="GCC" DebuggerType="GNU gdb debugger" Type="Executable">
+      <General OutputFile="../../../bin/MagiaSmash" IntermediateDirectory="$(ConfigurationName)" Command="./MagiaSmash" CommandArguments="-b MagiaSmash.obr" WorkingDirectory="../../../bin" PauseExecWhenProcTerminates="yes"/>
+      <Compiler Required="yes" Options="-ffast-math;-g;-msse2;-O2;-m32;-std=c++11;-fno-exceptions;-fno-rtti;-Wno-write-strings;-Wno-multichar;-Wno-unused-function;-fschedule-insns" C_Options="-ffast-math;-g;-msse2;-O2;-m32;-std=c11;-Wno-write-strings;-Wno-multichar;-Wno-unused-function;-fschedule-insns">
+        <IncludePath Value="$(ORX)/include"/>
+        <IncludePath Value="../../../include/extensions/pocketpy"/>
+        <IncludePath Value="../../../include/extensions"/>
+        <IncludePath Value="../../../include"/>
+        <Preprocessor Value="PK_ENABLE_OS=0"/>
+      </Compiler>
+      <Linker Required="yes" Options="-static-libgcc;-static-libstdc++;-m32;-L/usr/lib32;-Wl,-rpath ./;-Wl,--export-dynamic">
+        <LibraryPath Value="$(ORX)/lib/dynamic" />
+        <LibraryPath Value="." />
+        <Library Value="orx" />
+        <Library Value="dl" />
+        <Library Value="m" />
+        <Library Value="rt" />
+      </Linker>
+      <ResourceCompiler Required="no" Options=""/>
+      <PostBuild>
+        <Command Enabled="yes">cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin</Command>
+      </PostBuild>
+      <CustomBuild Enabled="no">
+        <CleanCommand></CleanCommand>
+        <BuildCommand></BuildCommand>
+        <SingleFileCommand></SingleFileCommand>
+        <MakefileGenerationCommand></MakefileGenerationCommand>
+        <ThirdPartyToolName>None</ThirdPartyToolName>
+        <WorkingDirectory></WorkingDirectory>
+      </CustomBuild>
+      <AdditionalRules>
+        <CustomPostBuild></CustomPostBuild>
+        <CustomPreBuild></CustomPreBuild>
+      </AdditionalRules>
+    </Configuration>
+  </Settings>
+  <Dependencies name="Debug_x64">
+  </Dependencies>
+  <Dependencies name="Profile_x64">
+  </Dependencies>
+  <Dependencies name="Release_x64">
+  </Dependencies>
+  <Dependencies name="Bundle_x64">
+  </Dependencies>
+  <Dependencies name="Debug_x32">
+  </Dependencies>
+  <Dependencies name="Profile_x32">
+  </Dependencies>
+  <Dependencies name="Release_x32">
+  </Dependencies>
+  <Dependencies name="Bundle_x32">
+  </Dependencies>
+</CodeLite_Project>

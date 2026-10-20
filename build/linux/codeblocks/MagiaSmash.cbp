@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="MagiaSmash" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug|x64">
+				<Option output="../../../bin/MagiaSmashd" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x64/Debug" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-m64" />
+					<Add option="-std=c11" />
+					<Add option="-std=c++11" />
+					<Add option="-fno-exceptions" />
+					<Add option="-DPK_ENABLE_OS=0" />
+					<Add option="-D__orxDEBUG__" />
+					<Add option="-Wno-write-strings" />
+					<Add option="-Wno-multichar" />
+					<Add option="-Wno-unused-function" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/extensions/pocketpy" />
+					<Add directory="../../../include/extensions" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-static-libgcc" />
+					<Add option="-static-libstdc++" />
+					<Add option="-m64" />
+					<Add option="-L/usr/lib64" />
+					<Add option="-Wl,-rpath ./" />
+					<Add option="-Wl,--export-dynamic" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orxd" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Profile|x64">
+				<Option output="../../../bin/MagiaSmashp" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x64/Profile" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-O2" />
+					<Add option="-m64" />
+					<Add option="-std=c11" />
+					<Add option="-std=c++11" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-DPK_ENABLE_OS=0" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D__orxPROFILER__" />
+					<Add option="-Wno-write-strings" />
+					<Add option="-Wno-multichar" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-fschedule-insns" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/extensions/pocketpy" />
+					<Add directory="../../../include/extensions" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-static-libgcc" />
+					<Add option="-static-libstdc++" />
+					<Add option="-m64" />
+					<Add option="-L/usr/lib64" />
+					<Add option="-Wl,-rpath ./" />
+					<Add option="-Wl,--export-dynamic" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orxp" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release|x64">
+				<Option output="../../../bin/MagiaSmash" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x64/Release" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-O2" />
+					<Add option="-m64" />
+					<Add option="-std=c11" />
+					<Add option="-std=c++11" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-DPK_ENABLE_OS=0" />
+					<Add option="-DNDEBUG" />
+					<Add option="-Wno-write-strings" />
+					<Add option="-Wno-multichar" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-fschedule-insns" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/extensions/pocketpy" />
+					<Add directory="../../../include/extensions" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-static-libgcc" />
+					<Add option="-static-libstdc++" />
+					<Add option="-m64" />
+					<Add option="-L/usr/lib64" />
+					<Add option="-Wl,-rpath ./" />
+					<Add option="-Wl,--export-dynamic" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orx" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Bundle|x64">
+				<Option output="../../../bin/MagiaSmash" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x64/Bundle" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-O2" />
+					<Add option="-m64" />
+					<Add option="-std=c11" />
+					<Add option="-std=c++11" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-DPK_ENABLE_OS=0" />
+					<Add option="-Wno-write-strings" />
+					<Add option="-Wno-multichar" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-fschedule-insns" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/extensions/pocketpy" />
+					<Add directory="../../../include/extensions" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-static-libgcc" />
+					<Add option="-static-libstdc++" />
+					<Add option="-m64" />
+					<Add option="-L/usr/lib64" />
+					<Add option="-Wl,-rpath ./" />
+					<Add option="-Wl,--export-dynamic" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orx" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Debug|x32">
+				<Option output="../../../bin/MagiaSmashd" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x32/Debug" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-msse2" />
+					<Add option="-m32" />
+					<Add option="-std=c11" />
+					<Add option="-std=c++11" />
+					<Add option="-fno-exceptions" />
+					<Add option="-DPK_ENABLE_OS=0" />
+					<Add option="-D__orxDEBUG__" />
+					<Add option="-Wno-write-strings" />
+					<Add option="-Wno-multichar" />
+					<Add option="-Wno-unused-function" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/extensions/pocketpy" />
+					<Add directory="../../../include/extensions" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-static-libgcc" />
+					<Add option="-static-libstdc++" />
+					<Add option="-m32" />
+					<Add option="-L/usr/lib32" />
+					<Add option="-Wl,-rpath ./" />
+					<Add option="-Wl,--export-dynamic" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orxd" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Profile|x32">
+				<Option output="../../../bin/MagiaSmashp" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x32/Profile" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-msse2" />
+					<Add option="-O2" />
+					<Add option="-m32" />
+					<Add option="-std=c11" />
+					<Add option="-std=c++11" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-DPK_ENABLE_OS=0" />
+					<Add option="-DNDEBUG" />
+					<Add option="-D__orxPROFILER__" />
+					<Add option="-Wno-write-strings" />
+					<Add option="-Wno-multichar" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-fschedule-insns" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/extensions/pocketpy" />
+					<Add directory="../../../include/extensions" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-static-libgcc" />
+					<Add option="-static-libstdc++" />
+					<Add option="-m32" />
+					<Add option="-L/usr/lib32" />
+					<Add option="-Wl,-rpath ./" />
+					<Add option="-Wl,--export-dynamic" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orxp" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Release|x32">
+				<Option output="../../../bin/MagiaSmash" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x32/Release" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-msse2" />
+					<Add option="-O2" />
+					<Add option="-m32" />
+					<Add option="-std=c11" />
+					<Add option="-std=c++11" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-DPK_ENABLE_OS=0" />
+					<Add option="-DNDEBUG" />
+					<Add option="-Wno-write-strings" />
+					<Add option="-Wno-multichar" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-fschedule-insns" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/extensions/pocketpy" />
+					<Add directory="../../../include/extensions" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-static-libgcc" />
+					<Add option="-static-libstdc++" />
+					<Add option="-m32" />
+					<Add option="-L/usr/lib32" />
+					<Add option="-Wl,-rpath ./" />
+					<Add option="-Wl,--export-dynamic" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orx" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin" />
+				</ExtraCommands>
+			</Target>
+			<Target title="Bundle|x32">
+				<Option output="../../../bin/MagiaSmash" prefix_auto="0" extension_auto="0" />
+				<Option object_output="obj/x32/Bundle" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-ffast-math" />
+					<Add option="-g" />
+					<Add option="-msse2" />
+					<Add option="-O2" />
+					<Add option="-m32" />
+					<Add option="-std=c11" />
+					<Add option="-std=c++11" />
+					<Add option="-fno-exceptions" />
+					<Add option="-fno-rtti" />
+					<Add option="-DPK_ENABLE_OS=0" />
+					<Add option="-Wno-write-strings" />
+					<Add option="-Wno-multichar" />
+					<Add option="-Wno-unused-function" />
+					<Add option="-fschedule-insns" />
+					<Add directory="$(ORX)/include" />
+					<Add directory="../../../include/extensions/pocketpy" />
+					<Add directory="../../../include/extensions" />
+					<Add directory="../../../include" />
+				</Compiler>
+				<Linker>
+					<Add option="-static-libgcc" />
+					<Add option="-static-libstdc++" />
+					<Add option="-m32" />
+					<Add option="-L/usr/lib32" />
+					<Add option="-Wl,-rpath ./" />
+					<Add option="-Wl,--export-dynamic" />
+					<Add directory="$(ORX)/lib/dynamic" />
+					<Add directory="." />
+					<Add library="orx" />
+					<Add library="dl" />
+					<Add library="m" />
+					<Add library="rt" />
+				</Linker>
+				<ExtraCommands>
+					<Add after="cp -f $(ORX)/lib/dynamic/liborx*.so ../../../bin" />
+				</ExtraCommands>
+			</Target>
+		</Build>
+		<Unit filename="../../../src/Fighter.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="../../../src/GameHUD.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="../../../src/MagiaSmash.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="../../../src/extensions/pocketpy/pocketpy.c">
+			<Option virtualFolder="src/extensions/pocketpy" />
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="../../../include/Fighter.h">
+			<Option virtualFolder="include" />
+		</Unit>
+		<Unit filename="../../../include/GameHUD.h">
+			<Option virtualFolder="include" />
+		</Unit>
+		<Unit filename="../../../include/MagiaSmash.h">
+			<Option virtualFolder="include" />
+		</Unit>
+		<Unit filename="../../../include/extensions/orxNuklear.h">
+			<Option virtualFolder="include/extensions" />
+		</Unit>
+		<Unit filename="../../../include/extensions/orxMovie.h">
+			<Option virtualFolder="include/extensions" />
+		</Unit>
+		<Unit filename="../../../include/extensions/orxMod.h">
+			<Option virtualFolder="include/extensions" />
+		</Unit>
+		<Unit filename="../../../include/extensions/orxPy.h">
+			<Option virtualFolder="include/extensions" />
+		</Unit>
+		<Unit filename="../../../include/extensions/orxBundle.h">
+			<Option virtualFolder="include/extensions" />
+		</Unit>
+		<Unit filename="../../../include/extensions/orxNoiseTexture.h">
+			<Option virtualFolder="include/extensions" />
+		</Unit>
+		<Unit filename="../../../include/extensions/orxRemote.h">
+			<Option virtualFolder="include/extensions" />
+		</Unit>
+		<Unit filename="../../../include/extensions/orxSid.h">
+			<Option virtualFolder="include/extensions" />
+		</Unit>
+		<Unit filename="../../../include/extensions/orxExtensions.h">
+			<Option virtualFolder="include/extensions" />
+		</Unit>
+		<Unit filename="../../../include/extensions/orxSndh.h">
+			<Option virtualFolder="include/extensions" />
+		</Unit>
+		<Unit filename="../../../include/extensions/cRSID/Config.h">
+			<Option virtualFolder="include/extensions/cRSID" />
+		</Unit>
+		<Unit filename="../../../include/extensions/cRSID/libcRSID.h">
+			<Option virtualFolder="include/extensions/cRSID" />
+		</Unit>
+		<Unit filename="../../../include/extensions/cRSID/Optimize.h">
+			<Option virtualFolder="include/extensions/cRSID" />
+		</Unit>
+		<Unit filename="../../../include/extensions/cRSID/host/host.h">
+			<Option virtualFolder="include/extensions/cRSID/host" />
+		</Unit>
+		<Unit filename="../../../include/extensions/cRSID/C64/SID_CombiWaves.h">
+			<Option virtualFolder="include/extensions/cRSID/C64" />
+		</Unit>
+		<Unit filename="../../../include/extensions/cRSID/C64/C64.h">
+			<Option virtualFolder="include/extensions/cRSID/C64" />
+		</Unit>
+		<Unit filename="../../../include/extensions/cRSID/C64/SincWindow.h">
+			<Option virtualFolder="include/extensions/cRSID/C64" />
+		</Unit>
+		<Unit filename="../../../include/extensions/cRSID/C64/SID_FilterCurves.h">
+			<Option virtualFolder="include/extensions/cRSID/C64" />
+		</Unit>
+		<Unit filename="../../../include/extensions/nuklear/nuklear.h">
+			<Option virtualFolder="include/extensions/nuklear" />
+		</Unit>
+		<Unit filename="../../../include/extensions/Scroll/ScrollBase.h">
+			<Option virtualFolder="include/extensions/Scroll" />
+		</Unit>
+		<Unit filename="../../../include/extensions/Scroll/ScrollObject.h">
+			<Option virtualFolder="include/extensions/Scroll" />
+		</Unit>
+		<Unit filename="../../../include/extensions/Scroll/Scroll.h">
+			<Option virtualFolder="include/extensions/Scroll" />
+		</Unit>
+		<Unit filename="../../../include/extensions/pl_mpeg/pl_mpeg.h">
+			<Option virtualFolder="include/extensions/pl_mpeg" />
+		</Unit>
+		<Unit filename="../../../include/extensions/lz4/lz4hc.h">
+			<Option virtualFolder="include/extensions/lz4" />
+		</Unit>
+		<Unit filename="../../../include/extensions/lz4/lz4.h">
+			<Option virtualFolder="include/extensions/lz4" />
+		</Unit>
+		<Unit filename="../../../include/extensions/pocketpy/pocketpy.h">
+			<Option virtualFolder="include/extensions/pocketpy" />
+		</Unit>
+		<Unit filename="../../../include/extensions/AtariAudio/ym2149_tables.h">
+			<Option virtualFolder="include/extensions/AtariAudio" />
+		</Unit>
+		<Unit filename="../../../include/extensions/AtariAudio/Mk68901.h">
+			<Option virtualFolder="include/extensions/AtariAudio" />
+		</Unit>
+		<Unit filename="../../../include/extensions/AtariAudio/AtariAudio.h">
+			<Option virtualFolder="include/extensions/AtariAudio" />
+		</Unit>
+		<Unit filename="../../../include/extensions/AtariAudio/SteDac.h">
+			<Option virtualFolder="include/extensions/AtariAudio" />
+		</Unit>
+		<Unit filename="../../../include/extensions/AtariAudio/AtariMachine.h">
+			<Option virtualFolder="include/extensions/AtariAudio" />
+		</Unit>
+		<Unit filename="../../../include/extensions/AtariAudio/ym2149c.h">
+			<Option virtualFolder="include/extensions/AtariAudio" />
+		</Unit>
+		<Unit filename="../../../include/extensions/AtariAudio/SndhFile.h">
+			<Option virtualFolder="include/extensions/AtariAudio" />
+		</Unit>
+		<Unit filename="../../../include/extensions/AtariAudio/external/ice_24.h">
+			<Option virtualFolder="include/extensions/AtariAudio/external" />
+		</Unit>
+		<Unit filename="../../../include/extensions/AtariAudio/external/Musashi/m68kconf.h">
+			<Option virtualFolder="include/extensions/AtariAudio/external/Musashi" />
+		</Unit>
+		<Unit filename="../../../include/extensions/AtariAudio/external/Musashi/m68kops.h">
+			<Option virtualFolder="include/extensions/AtariAudio/external/Musashi" />
+		</Unit>
+		<Unit filename="../../../include/extensions/AtariAudio/external/Musashi/m68kcpu.h">
+			<Option virtualFolder="include/extensions/AtariAudio/external/Musashi" />
+		</Unit>
+		<Unit filename="../../../include/extensions/AtariAudio/external/Musashi/m68k.h">
+			<Option virtualFolder="include/extensions/AtariAudio/external/Musashi" />
+		</Unit>
+		<Unit filename="../../../include/extensions/FastNoiseLite/C/FastNoiseLite.h">
+			<Option virtualFolder="include/extensions/FastNoiseLite/C" />
+		</Unit>
+		<Unit filename="../../../include/extensions/ibxm/ibxm.h">
+			<Option virtualFolder="include/extensions/ibxm" />
+		</Unit>
+		<Unit filename="../../../include/orxBundleData.inc">
+			<Option virtualFolder="bundle" />
+		</Unit>
+		<Unit filename="../../premake4.lua">
+			<Option virtualFolder="build" />
+		</Unit>
+		<Unit filename="../../../data/config/CreationTemplate.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/MagiaSmashp.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/MagiaSmashd.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/MagiaSmash.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/ExtensionTemplate.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Unit filename="../../../data/config/SettingsTemplate.ini">
+			<Option virtualFolder="config" />
+		</Unit>
+		<Extensions>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
+
