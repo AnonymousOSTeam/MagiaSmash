@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MagiaSmash — 2D arena brawler</title>
+<meta name="description" content="MagiaSmash is a 2D arena brawler blending Blood+-style sword combat with magical-girl themes, built on the orx engine.">
+<meta property="og:title" content="MagiaSmash — 2D arena brawler">
+<meta property="og:description" content="Sword combat meets magical girls. Five waves of foes in a single arena, built on the orx engine.">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="dot"></span>MagiaSmash</a>
+    <nav class="site">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="characters.html">Characters &amp; Moves</a>
+      <a href="download.html">Download</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="changelog.html">Changelog</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="moon" aria-hidden="true"></div>
+    <div class="wrap">
+      <h1>MagiaSmash</h1>
+      <p class="tagline">
+        Sword combat meets magical girls. Carve through five waves of foes in a
+        single moonlit arena — built on the orx engine, driven entirely by data.
+      </p>
+      <div class="badges">
+        <span class="badge hot">v0.2.0</span>
+        <span class="badge">Linux x86_64</span>
+        <span class="badge gold">zlib license</span>
+        <span class="badge">C++ &amp; Python</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="download.html">↓ Download</a>
+        <a class="btn btn-ghost" href="characters.html">See the roster</a>
+        <a class="btn btn-ghost" href="https://github.com/AnonymousOSTeam/MagiaSmash">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">What it is</div>
+        <h2>A focused arena fighter</h2>
+        <p>MagiaSmash is a small, complete combat prototype: one arena, one
+        player, five escalating waves, and a combat system built to be tuned
+        entirely from config files.</p>
+      </div>
+
+      <div class="grid cols-3">
+        <div class="card hover">
+          <span class="icon">⚔️</span>
+          <h3>Deliberate combat</h3>
+          <p>Light and heavy attacks with startup, active and recovery frames,
+          hitstop, hitstun, lunge and directional knockback. A three-hit light
+          chain rewards aggression.</p>
+        </div>
+        <div class="card hover">
+          <span class="icon">👤</span>
+          <h3>One fighter system</h3>
+          <p>A single C++ <code>Fighter</code> class powers every combatant —
+          player and enemies alike — so behaviour stays consistent and each
+          character is just a config section.</p>
+        </div>
+        <div class="card hover">
+          <span class="icon">🌊</span>
+          <h3>Five waves</h3>
+          <p>Enemies spawn from alternating sides with a per-wave difficulty
+          scale. Health carries between waves: clear all five to win.</p>
+        </div>
+        <div class="card hover">
+          <span class="icon">📜</span>
+          <h3>Data-driven content</h3>
+          <p>Fighters, moves, enemies, waves, effects, colours and UI all live
+          in <code>MagiaSmash.ini</code>. Rebalance without recompiling.</p>
+        </div>
+        <div class="card hover">
+          <span class="icon">🐍</span>
+          <h3>Python director</h3>
+          <p>Scene setup, wave spawning, victory and restart flow live in
+          <code>MagiaSmash.py</code>, driving the match each frame.</p>
+        </div>
+        <div class="card hover">
+          <span class="icon">✨</span>
+          <h3>Feel</h3>
+          <p>Hit sparks, slash arcs, dash pulse trails, camera shake and
+          SDF-glow UI text — all defined as data, no code edits required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">How a match plays</div>
+        <h2>Clear five waves, keep your health</h2>
+        <p>Each wave spawns a set of foes from one side of the arena. You keep
+        the health you have left — there are no pickups, only skill.</p>
+      </div>
+
+      <div class="grid cols-2">
+        <div>
+          <div class="wave-list">
+            <div class="wave">
+              <div class="n">1</div>
+              <div class="info"><div class="title">Two Chiropteran</div><div class="desc">Warm-up. Both foes from the left.</div></div>
+              <div class="pips"><span class="pip"></span><span class="pip"></span></div>
+            </div>
+            <div class="wave">
+              <div class="n">2</div>
+              <div class="info"><div class="title">Three Chiropteran</div><div class="desc">Same fodder, more of them, from the right.</div></div>
+              <div class="pips"><span class="pip"></span><span class="pip"></span><span class="pip"></span></div>
+            </div>
+            <div class="wave">
+              <div class="n">3</div>
+              <div class="info"><div class="title">First big foe</div><div class="desc">A BigChiropteran joins two regulars.</div></div>
+              <div class="pips"><span class="pip"></span><span class="pip big"></span><span class="pip"></span></div>
+            </div>
+            <div class="wave">
+              <div class="n">4</div>
+              <div class="info"><div class="title">Crowd control</div><div class="desc">Four enemies at once, including a big one.</div></div>
+              <div class="pips"><span class="pip"></span><span class="pip"></span><span class="pip big"></span><span class="pip"></span></div>
+            </div>
+            <div class="wave final">
+              <div class="n">5</div>
+              <div class="info"><div class="title">The finale</div><div class="desc">Two big foes and a regular — the real test.</div></div>
+              <div class="pips"><span class="pip big"></span><span class="pip"></span><span class="pip big"></span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Controls at a glance</h3>
+          <p style="margin-bottom:14px">Keyboard-driven, no gamepad required.</p>
+          <div class="kv">
+            <div class="row"><span class="k">Move</span><span class="v">← / →</span></div>
+            <div class="row"><span class="k">Jump</span><span class="v">↑</span></div>
+            <div class="row"><span class="k">Dash</span><span class="v">Left Shift</span></div>
+            <div class="row"><span class="k">Light attack</span><span class="v">J</span></div>
+            <div class="row"><span class="k">Heavy attack</span><span class="v">K</span></div>
+            <div class="row"><span class="k">Restart</span><span class="v">R / Enter</span></div>
+            <div class="row"><span class="k">Quit</span><span class="v">Esc</span></div>
+          </div>
+          <p style="margin-top:16px"><a href="characters.html">Full move data →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Get it</div>
+        <h2>Play it now</h2>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Download the build</h3>
+          <p style="margin-bottom:16px">Portable Linux x86_64 bundle with the orx
+          runtime included. Unpack and run — no installation.</p>
+          <a class="btn btn-primary" href="download.html">Download v0.2.0</a>
+        </div>
+        <div class="card">
+          <h3>Read the source</h3>
+          <p style="margin-bottom:16px">C++ game systems, Python director and all
+          INI content are on GitHub under the zlib license.</p>
+          <a class="btn btn-ghost" href="https://github.com/AnonymousOSTeam/MagiaSmash">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>MagiaSmash — zlib licensed. Built on <a href="https://orx-project.org/">orx</a>.</span>
+    <span><a href="https://github.com/AnonymousOSTeam/MagiaSmash">GitHub</a> · <a href="https://github.com/AnonymousOSTeam/MagiaSmash/releases">Releases</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

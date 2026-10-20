@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Download — MagiaSmash</title>
+<meta name="description" content="Download MagiaSmash for Linux x86_64 — portable bundle with the orx runtime included.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="dot"></span>MagiaSmash</a>
+    <nav class="site">
+      <a href="index.html">Home</a>
+      <a href="characters.html">Characters &amp; Moves</a>
+      <a href="download.html" aria-current="page">Download</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="changelog.html">Changelog</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap page-head">
+    <div class="kicker" style="color:var(--pink);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.76rem">Get the game</div>
+    <h1>Download</h1>
+    <p>MagiaSmash ships as a portable Linux x86_64 bundle. The orx runtime
+    library is included, so there is nothing to install.</p>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="grid cols-2">
+
+        <div class="card" style="border-color:#ff3d9a55">
+          <div class="badge hot" style="margin-bottom:12px">Latest &nbsp;v0.2.0</div>
+          <h3 style="font-size:1.3rem">Linux x86_64</h3>
+          <p style="margin-bottom:6px">Portable tar.gz bundle — executable,
+          bundled <code>liborx.so</code>, and all game data.</p>
+          <p style="color:var(--text-dim);font-size:.88rem;margin-bottom:18px">
+            11.3 MB · requires an X11 display with OpenGL 2.1+</p>
+
+          <a class="btn btn-primary" style="width:100%;justify-content:center"
+             href="https://github.com/AnonymousOSTeam/MagiaSmash/releases/download/v0.2.0/MagiaSmash-0.2.0-linux-x86_64.tar.gz">
+             ↓ MagiaSmash-0.2.0-linux-x86_64.tar.gz
+          </a>
+
+          <div style="margin-top:14px;font-size:.84rem;color:var(--text-dim)">
+            <a href="https://github.com/AnonymousOSTeam/MagiaSmash/releases/download/v0.2.0/MagiaSmash-0.2.0-linux-x86_64.tar.gz.sha256">SHA-256 checksum</a>
+            · <a href="https://github.com/AnonymousOSTeam/MagiaSmash/releases/tag/v0.2.0">Release notes</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>Other ways to get it</h3>
+          <p style="margin-bottom:16px">All versions, source, and history live
+          on GitHub.</p>
+          <div style="display:grid;gap:10px">
+            <a class="btn btn-ghost" style="justify-content:flex-start"
+               href="https://github.com/AnonymousOSTeam/MagiaSmash/releases">All releases</a>
+            <a class="btn btn-ghost" style="justify-content:flex-start"
+               href="https://github.com/AnonymousOSTeam/MagiaSmash">Source on GitHub</a>
+            <a class="btn btn-ghost" style="justify-content:flex-start"
+               href="architecture.html">Build it yourself</a>
+          </div>
+          <div class="note" style="margin-top:18px">
+            Windows, macOS and a browser build are <strong>not</strong> currently
+            provided. The engine and build files support them, but no binaries
+            have been produced yet.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Install &amp; run</div>
+        <h2>Running the game</h2>
+        <p>Three commands. The important part is <strong>where</strong> you run
+        it from.</p>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <h3>Extract the archive</h3>
+          <p>The tar.gz contains a single top-level folder; unpack it anywhere.</p>
+          <pre><code>tar -xzf MagiaSmash-0.2.0-linux-x86_64.tar.gz
+cd MagiaSmash-0.2.0-linux-x86_64</code></pre>
+        </li>
+        <li>
+          <h3>Enter the <code>bin</code> directory</h3>
+          <p>The game resolves its configuration and resources relative to
+          <code>bin/</code>, which sits beside <code>data/</code>. Launching from
+          the wrong directory means no window.</p>
+          <pre><code>cd bin
+./MagiaSmash</code></pre>
+        </li>
+        <li>
+          <h3>Play</h3>
+          <p>Move with the arrow keys, attack with <kbd>J</kbd> and <kbd>K</kbd>,
+          dash with <kbd>Left Shift</kbd>. Clear five waves to win. Press
+          <kbd>R</kbd> to restart.</p>
+        </li>
+      </ol>
+
+      <div class="note" style="margin-top:24px">
+        <strong>Do not move files around.</strong> The bundle must keep its
+        layout — <code>bin/</code> and <code>data/</code> as siblings. orx looks
+        for <code>data/config/MagiaSmash.ini</code> and loads Python and assets
+        through <code>../data/…</code> paths.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Controls</div>
+        <h2>Every key</h2>
+      </div>
+
+      <div class="keys">
+        <div class="key-row"><span class="action">Move left / right</span>
+          <span class="key-group"><kbd>←</kbd><kbd>→</kbd></span></div>
+        <div class="key-row"><span class="action">Jump</span>
+          <span class="key-group"><kbd>↑</kbd></span></div>
+        <div class="key-row"><span class="action">Dash</span>
+          <span class="key-group"><kbd>Left Shift</kbd></span></div>
+        <div class="key-row"><span class="action">Light attack</span>
+          <span class="key-group"><kbd>J</kbd></span></div>
+        <div class="key-row"><span class="action">Heavy attack</span>
+          <span class="key-group"><kbd>K</kbd></span></div>
+        <div class="key-row"><span class="action">Restart match</span>
+          <span class="key-group"><kbd>R</kbd><kbd>Enter</kbd></span></div>
+        <div class="key-row"><span class="action">Quit</span>
+          <span class="key-group"><kbd>Esc</kbd></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Requirements</div>
+        <h2>What you need</h2>
+      </div>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>System</h3>
+          <ul class="plain" style="margin:0">
+            <li>Linux <strong>x86_64</strong></li>
+            <li>An <strong>X11</strong> display</li>
+            <li>OpenGL <strong>2.1+</strong></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Libraries</h3>
+          <ul class="plain" style="margin:0">
+            <li><code>libdl</code>, <code>libm</code>, <code>librt</code></li>
+            <li>X11 and GL (typically present)</li>
+            <li>orx runtime — <strong>included</strong></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Verified checksum</h3>
+          <p style="margin-bottom:10px">Confirm your download with the published
+          SHA-256:</p>
+          <pre style="margin:0"><code>sha256sum -c \
+  MagiaSmash-0.2.0-*.sha256</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>MagiaSmash — zlib licensed. Built on <a href="https://orx-project.org/">orx</a>.</span>
+    <span><a href="https://github.com/AnonymousOSTeam/MagiaSmash">GitHub</a> · <a href="https://github.com/AnonymousOSTeam/MagiaSmash/releases">Releases</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

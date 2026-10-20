@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog — MagiaSmash</title>
+<meta name="description" content="Release history for MagiaSmash.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="dot"></span>MagiaSmash</a>
+    <nav class="site">
+      <a href="index.html">Home</a>
+      <a href="characters.html">Characters &amp; Moves</a>
+      <a href="download.html">Download</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="changelog.html" aria-current="page">Changelog</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap page-head">
+    <div class="kicker" style="color:var(--pink);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.76rem">History</div>
+    <h1>Changelog</h1>
+    <p>Every tagged release of MagiaSmash, newest first. Full notes and
+    downloadable builds are on the
+    <a href="https://github.com/AnonymousOSTeam/MagiaSmash/releases">releases page</a>.</p>
+  </div>
+
+  <section>
+    <div class="wrap">
+
+      <article class="card" style="margin-bottom:18px;border-color:#ff3d9a55">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px">
+          <h3 style="margin:0;font-size:1.35rem">v0.2.0</h3>
+          <span class="badge hot">Latest</span>
+          <span style="color:var(--text-dim);font-size:.87rem;margin-left:auto">Documentation release</span>
+        </div>
+        <p style="color:var(--text-dim);margin-bottom:14px">Project documentation and repository metadata. No gameplay changes.</p>
+        <ul class="plain" style="margin:0">
+          <li><strong>Added</strong> a project README covering features, architecture, build configurations, controls and the required distribution layout.</li>
+          <li><strong>Added</strong> a <code>LICENSE</code> (zlib) at the repository root, with orx attribution.</li>
+          <li><strong>Added</strong> repository description and topics.</li>
+          <li><strong>Changed</strong> the release bundle to include the README and license.</li>
+        </ul>
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn-ghost" href="https://github.com/AnonymousOSTeam/MagiaSmash/releases/tag/v0.2.0">Release notes</a>
+          <a class="btn btn-ghost" href="https://github.com/AnonymousOSTeam/MagiaSmash/releases/download/v0.2.0/MagiaSmash-0.2.0-linux-x86_64.tar.gz">Download</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px">
+          <h3 style="margin:0;font-size:1.35rem">v0.1.0</h3>
+          <span class="badge">First release</span>
+          <span style="color:var(--text-dim);font-size:.87rem;margin-left:auto">Playable prototype</span>
+        </div>
+        <p style="color:var(--text-dim);margin-bottom:14px">The first playable build: a complete five-wave arena prototype.</p>
+        <ul class="plain" style="margin:0">
+          <li><strong>Player combat</strong> — move, jump, dash, a three-hit light chain and a heavy attack, with startup/active/recovery frames, hitstop, hitstun, lunge and directional knockback.</li>
+          <li><strong>Enemies</strong> — Chiropteran and the tougher BigChiropteran, with data-driven AI attack range and delay.</li>
+          <li><strong>Waves</strong> — five escalating waves spawned from alternating sides, with per-wave difficulty scaling; health carries between waves.</li>
+          <li><strong>Match flow</strong> — victory on clearing the final wave, defeat on losing all health, and instant restart.</li>
+          <li><strong>Feel</strong> — hit sparks, slash arcs, dash pulse, camera shake and SDF-glow UI text.</li>
+          <li><strong>HUD</strong> — health bar, wave label, enemy counter and centred messages.</li>
+          <li><strong>Architecture</strong> — a single C++ <code>Fighter</code> system for all combatants, a pocketpy game director, and fully data-driven INI content bridged through <code>[MatchState]</code>.</li>
+        </ul>
+        <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn btn-ghost" href="https://github.com/AnonymousOSTeam/MagiaSmash/releases/tag/v0.1.0">Release notes</a>
+          <a class="btn btn-ghost" href="https://github.com/AnonymousOSTeam/MagiaSmash/releases/download/v0.1.0/MagiaSmash-0.1.0-linux-x86_64.tar.gz">Download</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Roadmap</div>
+        <h2>What might come next</h2>
+        <p>These are ideas, not commitments — the prototype is a foundation to
+        build on.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Content</h3>
+          <ul class="plain" style="margin:0">
+            <li>More enemy types and attack patterns</li>
+            <li>Additional playable characters</li>
+            <li>Real sprite art to replace the placeholder rectangles</li>
+            <li>Sound and music</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Platform &amp; systems</h3>
+          <ul class="plain" style="margin:0">
+            <li>Windows and macOS builds</li>
+            <li>A browser (WebAssembly) build</li>
+            <li>Gamepad support</li>
+            <li>Difficulty modes and leaderboards</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>MagiaSmash — zlib licensed. Built on <a href="https://orx-project.org/">orx</a>.</span>
+    <span><a href="https://github.com/AnonymousOSTeam/MagiaSmash">GitHub</a> · <a href="https://github.com/AnonymousOSTeam/MagiaSmash/releases">Releases</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

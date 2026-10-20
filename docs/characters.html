@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Characters &amp; Moves — MagiaSmash</title>
+<meta name="description" content="The MagiaSmash roster: Saya the swordswoman, the Chiropteran and BigChiropteran foes, and every move's frame and damage data.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="dot"></span>MagiaSmash</a>
+    <nav class="site">
+      <a href="index.html">Home</a>
+      <a href="characters.html" aria-current="page">Characters &amp; Moves</a>
+      <a href="download.html">Download</a>
+      <a href="architecture.html">Architecture</a>
+      <a href="changelog.html">Changelog</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap page-head">
+    <div class="kicker" style="color:var(--pink);font-weight:800;letter-spacing:.18em;text-transform:uppercase;font-size:.76rem">Roster &amp; frame data</div>
+    <h1>Characters &amp; Moves</h1>
+    <p>Every combatant runs on the same <code>Fighter</code> system. A character
+    is nothing more than a config section: stats, a colour, and which moves it
+    may use. Here is everything the prototype ships with.</p>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Combatants</div>
+        <h2>Three fighters</h2>
+        <p>One hero and two tiers of enemy. The colour swatches below are the
+        actual <code>RGB</code> values from the config — placeholder art uses
+        solid rectangles for now.</p>
+      </div>
+
+      <div class="grid cols-3">
+
+        <div class="char">
+          <div class="swatch" style="background:linear-gradient(140deg,#f280cc,#a67cd8)">Saya</div>
+          <div class="body">
+            <div class="role">Player</div>
+            <h3>Saya</h3>
+            <p style="color:var(--text-dim);font-size:.92rem;margin:0 0 14px">
+              The swordswoman — a Blood+ homage. Fastest move speed in the game,
+              a three-hit light chain and a punishing heavy swing.</p>
+            <div class="stat"><span class="label">Health</span><span class="bar"><span style="width:80%"></span></span><span class="val">120</span></div>
+            <div class="stat"><span class="label">Move speed</span><span class="bar"><span style="width:100%"></span></span><span class="val">620</span></div>
+            <div class="stat"><span class="label">Dash</span><span class="bar"><span style="width:90%"></span></span><span class="val">1400</span></div>
+            <div class="stat"><span class="label">Jump</span><span class="bar"><span style="width:92%"></span></span><span class="val">1450</span></div>
+          </div>
+        </div>
+
+        <div class="char">
+          <div class="swatch" style="background:linear-gradient(140deg,#73408c,#452256)">Chiropteran</div>
+          <div class="body">
+            <div class="role">Enemy · fodder</div>
+            <h3>Chiropteran</h3>
+            <p style="color:var(--text-dim);font-size:.92rem;margin:0 0 14px">
+              A mobile attacker. Weak on its own, dangerous in numbers, and the
+              staple of the early waves.</p>
+            <div class="stat"><span class="label">Health</span><span class="bar"><span style="width:37%"></span></span><span class="val">55</span></div>
+            <div class="stat"><span class="label">Move speed</span><span class="bar"><span style="width:65%"></span></span><span class="val">400</span></div>
+            <div class="stat"><span class="label">Attack range</span><span class="bar"><span style="width:70%"></span></span><span class="val">130</span></div>
+            <div class="stat"><span class="label">Attack delay</span><span class="bar"><span style="width:50%"></span></span><span class="val">1.5s</span></div>
+          </div>
+        </div>
+
+        <div class="char">
+          <div class="swatch" style="background:linear-gradient(140deg,#c2334a,#6e1626)">BigChiropteran</div>
+          <div class="body">
+            <div class="role">Enemy · elite</div>
+            <h3>BigChiropteran</h3>
+            <p style="color:var(--text-dim);font-size:.92rem;margin:0 0 14px">
+              Slower but far tougher, with a longer reach and 1.6× damage.
+              Appears from wave 3 onward.</p>
+            <div class="stat"><span class="label">Health</span><span class="bar"><span style="width:100%"></span></span><span class="val">150</span></div>
+            <div class="stat"><span class="label">Move speed</span><span class="bar"><span style="width:52%"></span></span><span class="val">320</span></div>
+            <div class="stat"><span class="label">Attack range</span><span class="bar"><span style="width:88%"></span></span><span class="val">170</span></div>
+            <div class="stat"><span class="label">Damage scale</span><span class="bar"><span style="width:80%"></span></span><span class="val">1.6×</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Player moves</div>
+        <h2>Saya's moveset</h2>
+        <p>Frame data straight from <code>MagiaSmash.ini</code>. Times are in
+        seconds: <strong>startup</strong> before the hitbox appears,
+        <strong>active</strong> while it can hit, <strong>recovery</strong>
+        before you regain control.</p>
+      </div>
+
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Move</th>
+              <th class="num">Startup</th>
+              <th class="num">Active</th>
+              <th class="num">Recovery</th>
+              <th class="num">Damage</th>
+              <th class="num">Hitstun</th>
+              <th class="num">Hitstop</th>
+              <th class="num">Lunge</th>
+              <th>Knockback</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Light 1</strong></td>
+              <td class="num">0.06</td><td class="num">0.08</td><td class="num">0.16</td>
+              <td class="num">8</td><td class="num">0.22</td><td class="num">0.05</td>
+              <td class="num">380</td><td class="num">280, 380</td>
+            </tr>
+            <tr>
+              <td><strong>Light 2</strong></td>
+              <td class="num">0.06</td><td class="num">0.08</td><td class="num">0.16</td>
+              <td class="num">9</td><td class="num">0.22</td><td class="num">0.05</td>
+              <td class="num">350</td><td class="num">320, 320</td>
+            </tr>
+            <tr>
+              <td><strong>Light 3</strong> <span style="color:var(--pink);font-size:.8rem">finisher</span></td>
+              <td class="num">0.06</td><td class="num">0.08</td><td class="num">0.24</td>
+              <td class="num">14</td><td class="num">0.22</td><td class="num">0.09</td>
+              <td class="num">460</td><td class="num">680, 720</td>
+            </tr>
+            <tr>
+              <td><strong>Heavy</strong></td>
+              <td class="num">0.20</td><td class="num">0.10</td><td class="num">0.34</td>
+              <td class="num">22</td><td class="num">0.40</td><td class="num">0.12</td>
+              <td class="num">520</td><td class="num">820, 900</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note" style="margin-top:20px">
+        <strong>The light chain:</strong> Light 1 → Light 2 → Light 3 in quick
+        succession. The third hit is the payoff — nearly double the damage of
+        the opener with heavy knockback. The Heavy is slower to start but hits
+        hardest and launches foes farthest.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Enemy move</div>
+        <h2>The Claw</h2>
+        <p>Both enemy types share a single attack, tuned by the stat overrides
+        in their own sections.</p>
+      </div>
+
+      <div class="grid cols-2">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th>Property</th><th class="num">Value</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Startup</td><td class="num">0.22</td></tr>
+              <tr><td>Active</td><td class="num">0.10</td></tr>
+              <tr><td>Recovery</td><td class="num">0.30</td></tr>
+              <tr><td>Damage</td><td class="num">10</td></tr>
+              <tr><td>Hitstun</td><td class="num">0.28</td></tr>
+              <tr><td>Hitstop</td><td class="num">0.06</td></tr>
+              <tr><td>Lunge</td><td class="num">280</td></tr>
+              <tr><td>Knockback</td><td class="num">420, 520</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <h3>How enemies fight</h3>
+          <p style="margin-bottom:12px">Enemy behaviour is data-driven by three
+          keys carried on every Fighter:</p>
+          <ul class="plain" style="margin:0">
+            <li><strong>AI</strong> — marks the fighter as computer-controlled.</li>
+            <li><strong>AIAttackRange</strong> — how close it must be to swing
+            (130 for a Chiropteran, 170 for a big one).</li>
+            <li><strong>AIAttackDelay</strong> — the pause between attacks
+            (1.5s vs 2.0s).</li>
+          </ul>
+          <p style="margin-top:14px;color:var(--text-dim);font-size:.92rem">
+          The big variant's <code>DamageScale</code> of 1.6 multiplies the shared
+          Claw damage, so one small config value makes it meaningfully scarier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker">Design note</div>
+        <h2>Everything inherits</h2>
+        <p>Config parenthood keeps the roster tiny to define. <code>[Saya@Fighter]</code>
+        starts life with every base value and overrides only what makes her
+        Saya.</p>
+      </div>
+
+      <pre><code><span class="c-comment">; Base defaults shared by every combatant</span>
+[Fighter]
+Health          = 100
+MoveSpeed       = 600
+JumpVelocity    = 1450
+Gravity         = 3800
+DashSpeed       = 1400
+ComboList       = Light1 # Light2 # Light3
+HeavyMove       = Heavy
+AIMoveList      = Claw
+
+<span class="c-comment">; Saya inherits all of the above, then overrides a few keys</span>
+[Saya@Fighter]
+RGB             = (0.95, 0.5, 0.8)
+Health          = 120
+MoveSpeed       = 620
+IsPlayer        = true
+Input           = PlayerControls
+Team            = 0
+
+<span class="c-comment">; A big foe is just a Chiropteran with new numbers</span>
+[BigChiropteran@Chiropteran]
+RGB             = (0.62, 0.12, 0.18)
+Health          = 150
+Size            = (130, 230)
+DamageScale     = 1.6
+AIAttackRange   = 170</code></pre>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>MagiaSmash — zlib licensed. Built on <a href="https://orx-project.org/">orx</a>.</span>
+    <span><a href="https://github.com/AnonymousOSTeam/MagiaSmash">GitHub</a> · <a href="https://github.com/AnonymousOSTeam/MagiaSmash/releases">Releases</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
